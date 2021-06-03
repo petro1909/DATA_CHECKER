@@ -1,0 +1,56 @@
+﻿<Window x:Class="DATA_CHECKER.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DATA_CHECKER"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="960" Height="980" >
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid x:Name="Parameters" Grid.Row="0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="0.5*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel x:Name="RobotParameters"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Orientation="Vertical">
+
+                <Label Target="{Binding ElementName=RobotIp}">Robot IP</Label>
+                <TextBox x:Name="RobotIp" Height="35" Width="200" BorderThickness="1" BorderBrush="Red"></TextBox>
+
+                <Label Target="{Binding ElementName=RobotPort}">Robot Port</Label>
+                <TextBox x:Name="RobotPort" Height="34" Width="200" BorderThickness="1" BorderBrush="Red"></TextBox>
+
+            </StackPanel>
+
+            <StackPanel x:Name="ElementParameters"  VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Orientation="Vertical">
+                <Label Target="{Binding ElementName=ElementType}">Type of Element</Label>
+                <TextBox x:Name="ElementType" Height="35" Width="200" BorderThickness="1" BorderBrush="Red"></TextBox>
+
+                <Label Target="{Binding ElementName=ElenentNumber}">Number of Element</Label>
+                <TextBox x:Name="ElenentNumber" Height="34" Width="200" BorderThickness="1" BorderBrush="Red"></TextBox>
+            </StackPanel>
+
+            <StackPanel x:Name="ProgramsParameters" VerticalAlignment="Center" HorizontalAlignment="Center"  Grid.Column="2" Orientation="Vertical">
+                <Label Target="{Binding ElementName=Programs}">Name of Programs</Label>
+                <TextBox x:Name="Programs" Height="35" Width="200" BorderThickness="1" BorderBrush="Red"></TextBox>
+            </StackPanel>
+
+            <Button Grid.Column="3" Width="150" Height="40" Click="GetElements">Find</Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollViewer VerticalScrollBarVisibility="Visible">
+                <TextBox x:Name="program_data" Width="700" Height="900"></TextBox>
+            </ScrollViewer>
+        </Grid>
+        
+    </Grid>
+    
+</Window>
